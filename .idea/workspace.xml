@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e4b15c7-03b1-4ba3-b72d-ff2f21b33c67" name="Changes" comment="Introduction to a new feature - device simulator">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAN_test2/Test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/CAN_Device_Imitation/Template.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenTester/Reader_Logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/PenTester/Reader_Logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,23 +47,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.BusReplay.executor": "Run",
-    "Python.Clicker.executor": "Run",
-    "Python.Reader_Logger.executor": "Run",
-    "Python.Sender.executor": "Run",
-    "Python.Sender_TimeMes.executor": "Run",
-    "Python.Template.executor": "Run",
-    "Python.Test1.executor": "Run",
-    "Python.Test_Reader.executor": "Run",
-    "Python.Test_Reader_v2.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/sobkowiak_k/Desktop/Zadania/Stanowisko Testowe/Python_CANBus/Python-CANBus",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.BusReplay.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Clicker.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Reader_Logger.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Sender.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Sender_TimeMes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Template.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test_Reader.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test_Reader_v2.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sobkowiak_k/Desktop/Zadania/Stanowisko Testowe/Python_CANBus/Python-CANBus&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus" />
@@ -195,7 +193,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746701575673</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Introduction to a new feature - device simulator">
+      <option name="closed" value="true" />
+      <created>1746701671801</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1746701671801</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Introduction to a new feature - device simulator">
+      <option name="closed" value="true" />
+      <created>1746701895290</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1746701895290</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
