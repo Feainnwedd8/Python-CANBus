@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e4b15c7-03b1-4ba3-b72d-ff2f21b33c67" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
+    <list default="true" id="4e4b15c7-03b1-4ba3-b72d-ff2f21b33c67" name="Changes" comment="Clicker added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAN_test1/Test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Clicker/Clicker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAN_test2/Test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/CAN_Device_Imitation/Template.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/Reader_Logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/PenTester/Reader_Logger.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,13 +56,14 @@
     "Python.Reader_Logger.executor": "Run",
     "Python.Sender.executor": "Run",
     "Python.Sender_TimeMes.executor": "Run",
+    "Python.Template.executor": "Run",
     "Python.Test1.executor": "Run",
     "Python.Test_Reader.executor": "Run",
     "Python.Test_Reader_v2.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/sobkowiak_k/Desktop/Zadania/Stanowisko Testowe/Python_CANBus/Python-CANBus",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -169,7 +171,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746533255891</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1746681958185</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746681958185</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Clicker added">
+      <option name="closed" value="true" />
+      <created>1746682019004</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1746682019004</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,6 +207,7 @@
     <MESSAGE value="Reworked sending and receaving in PenTester&#10;Channel on both is switching automatically after test on one channel&#10;Renamed files subcommit&#10;&#10;Reviewed-by: Feainnwedd8" />
     <MESSAGE value="Reworked sending and receaving in PenTester&#10;Channel on both is switching automatically after test on one channel&#10;Renamed files subcommit&#10;Comments upgrade&#10;&#10;Reviewed-by: Feainnwedd8" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="Clicker added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clicker added" />
   </component>
 </project>
