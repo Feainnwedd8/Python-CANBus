@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4e4b15c7-03b1-4ba3-b72d-ff2f21b33c67" name="Changes" comment="Added">
+      <change afterPath="$PROJECT_DIR$/CAN_Device_Imitation/PowerSteering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAN_Device_Imitation/Template.py" beforeDir="false" afterPath="$PROJECT_DIR$/CAN_Device_Imitation/Template.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="master" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Feainnwedd8&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Feainnwedd8/Python-CANBus.git&quot;,
+    &quot;accountId&quot;: &quot;77452db6-1cbb-4b6a-ae3f-3b77f56c735e&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2vianp8S78S5rN8jJ372WCb5iJq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.BusReplay.executor": "Run",
+    "Python.Clicker.executor": "Run",
+    "Python.Reader_Logger.executor": "Run",
+    "Python.Sender.executor": "Run",
+    "Python.Sender_TimeMes.executor": "Run",
+    "Python.Template.executor": "Run",
+    "Python.Test1.executor": "Run",
+    "Python.Test_Reader.executor": "Run",
+    "Python.Test_Reader_v2.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/sobkowiak_k/Desktop/Zadania/Stanowisko Testowe/Python_CANBus/Python-CANBus",
+    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus" />
+      <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus\PenTester" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-ce3d9afa04ac-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.20224.347" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e4b15c7-03b1-4ba3-b72d-ff2f21b33c67" name="Changes" comment="" />
+      <created>1744630517472</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744630517472</updated>
+    </task>
+    <task id="LOCAL-00001" summary="v1">
+      <option name="closed" value="true" />
+      <created>1744630817758</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744630817758</updated>
+    </task>
+    <task id="LOCAL-00002" summary="v1">
+      <option name="closed" value="true" />
+      <created>1744630878455</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744630878455</updated>
+    </task>
+    <task id="LOCAL-00003" summary="v1">
+      <option name="closed" value="true" />
+      <created>1744632022880</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744632022880</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Reworked sending and receaving in PenTester&#10;Channel on both is switching automatically after test on one channel">
+      <option name="closed" value="true" />
+      <created>1746522888860</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1746522888860</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Reworked sending and receaving in PenTester&#10;Channel on both is switching automatically after test on one channel&#10;Renamed files subcommit&#10;&#10;Reviewed-by: Feainnwedd8">
+      <option name="closed" value="true" />
+      <created>1746523114048</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746523114048</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Reworked sending and receaving in PenTester&#10;Channel on both is switching automatically after test on one channel&#10;Renamed files subcommit&#10;Comments upgrade&#10;&#10;Reviewed-by: Feainnwedd8">
+      <option name="closed" value="true" />
+      <created>1746532747490</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1746532747490</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Reworked sending and receaving in PenTester&#10;Channel on both is switching automatically after test on one channel&#10;Renamed files subcommit&#10;Comments upgrade&#10;&#10;Reviewed-by: Feainnwedd8">
+      <option name="closed" value="true" />
+      <created>1746532920515</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1746532920515</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1746533108553</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746533108553</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1746533222674</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746533222674</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1746533255891</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1746533255891</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1746681958185</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746681958185</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Clicker added">
+      <option name="closed" value="true" />
+      <created>1746682019004</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1746682019004</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Introduction to a new feature - device simulator">
+      <option name="closed" value="true" />
+      <created>1746701575673</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1746701575673</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Introduction to a new feature - device simulator">
+      <option name="closed" value="true" />
+      <created>1746701671801</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1746701671801</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Introduction to a new feature - device simulator">
+      <option name="closed" value="true" />
+      <created>1746701895290</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1746701895290</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Introduction to a new feature - device simulator">
+      <option name="closed" value="true" />
+      <created>1746701953936</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1746701953936</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Introduction to a new feature - device simulator">
+      <option name="closed" value="true" />
+      <created>1746702031281</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1746702031281</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Introduction to a new feature - device simulator">
+      <option name="closed" value="true" />
+      <created>1746702158663</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1746702158663</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1746702259307</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1746702259307</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1746702477587</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1746702477587</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1746702640853</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1746702640853</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1746702737397</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1746702737397</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1746702822130</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1746702822130</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1746702905704</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1746702905704</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v1" />
+    <MESSAGE value="Reworked sending and receaving in PenTester&#10;Channel on both is switching automatically after test on one channel" />
+    <MESSAGE value="Reworked sending and receaving in PenTester&#10;Channel on both is switching automatically after test on one channel&#10;Renamed files subcommit&#10;&#10;Reviewed-by: Feainnwedd8" />
+    <MESSAGE value="Reworked sending and receaving in PenTester&#10;Channel on both is switching automatically after test on one channel&#10;Renamed files subcommit&#10;Comments upgrade&#10;&#10;Reviewed-by: Feainnwedd8" />
+    <MESSAGE value="Clicker added" />
+    <MESSAGE value="Introduction to a new feature - device simulator" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
+  </component>
+</project>

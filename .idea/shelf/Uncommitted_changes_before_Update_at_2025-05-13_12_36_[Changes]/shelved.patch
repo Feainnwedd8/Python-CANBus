@@ -1,0 +1,399 @@
+Index: CAN_Device_Imitation/PowerSteering.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CAN_Device_Imitation/PowerSteering.py b/CAN_Device_Imitation/PowerSteering.py
+new file mode 100644
+--- /dev/null	(date 1746880166910)
++++ b/CAN_Device_Imitation/PowerSteering.py	(date 1746880166910)
+@@ -0,0 +1,240 @@
++#próbna implementacja logiki sprężarki
++#hhhhhhhhhhhhhh
++import can
++import threading
++import time
++from collections import namedtuple
++import tkinter as tk
++from tkinter import messagebox
++
++# Example Signal definition within a CAN frame
++Signal = namedtuple('Signal', ['name', 'start_bit', 'length', 'is_signed', 'factor', 'offset'])
++
++# Example Frame definition
++class FrameDefinition:
++    def __init__(self, frame_id, signals):
++        self.frame_id = frame_id  # Extended ID
++        self.signals = signals    # List of Signal objects
++
++# Hardcoded example of frames and signals (normally from .dbc)
++DEVICE_DEFINITIONS = {
++    0x18FF50E5: FrameDefinition(
++        frame_id=0x18FF50E5,
++        signals=[
++            Signal('EngineSpeed', start_bit=0, length=16, is_signed=False, factor=0.125, offset=0),
++            Signal('VehicleSpeed', start_bit=16, length=8, is_signed=False, factor=1, offset=0),
++        ]
++    ),
++    0x18FF51E5: FrameDefinition(
++        frame_id=0x18FF51E5,
++        signals=[
++            Signal('FuelLevel', start_bit=0, length=8, is_signed=False, factor=0.4, offset=0),
++        ]
++    ),
++}
++
++def extract_signal(data_bytes, signal):
++    raw = 0
++    for i in range(len(data_bytes)):
++        raw |= data_bytes[i] << (8 * i)
++
++    mask = (1 << signal.length) - 1
++    raw_value = (raw >> signal.start_bit) & mask
++
++    if signal.is_signed:
++        sign_bit = 1 << (signal.length - 1)
++        if raw_value & sign_bit:
++            raw_value -= (1 << signal.length)
++
++    value = raw_value * signal.factor + signal.offset
++    return value
++
++class DeviceSimulator:
++    def __init__(self, channel='PCAN_USBBUS1', bitrate=500000):
++        self.bus = can.interface.Bus(
++            bustype='pcan',
++            channel=channel,
++            bitrate=bitrate
++        )
++        self.running = False
++
++        self.error_flags = [False] * 10  # For TEST1 to TEST10 bistable buttons
++        self.input_values = [0] * 8      # For TEST11 to TEST18 monostable input buttons
++
++    def start(self):
++        self.running = True
++        self.listener_thread = threading.Thread(target=self.receive_loop, daemon=True)
++        self.listener_thread.start()
++        print("CAN Device Simulator started...")
++
++    def stop(self):
++        self.running = False
++        self.listener_thread.join()
++        self.bus.shutdown()
++        print("CAN Device Simulator stopped.")
++
++    def receive_loop(self):
++        while self.running:
++            msg = self.bus.recv(timeout=1)
++            if msg is None:
++                continue
++            if msg.is_extended_id:
++                self.handle_message(msg)
++
++    def handle_message(self, msg):
++        frame_def = DEVICE_DEFINITIONS.get(msg.arbitration_id, None)
++        if frame_def is None:
++            print(f"Received unknown frame ID {hex(msg.arbitration_id)} - ignoring")
++            return
++
++        signals_data = {}
++        for signal in frame_def.signals:
++            try:
++                value = extract_signal(msg.data, signal)
++                signals_data[signal.name] = value
++            except Exception as e:
++                print(f"Error extracting signal {signal.name}: {e}")
++                continue
++
++        print(f"Received frame ID {hex(msg.arbitration_id)} with signals: {signals_data}")
++
++        output_frames = self.process_message(msg.arbitration_id, signals_data)
++
++        for out_msg in output_frames:
++            self.send_message(out_msg)
++
++    def process_message(self, frame_id, signals_data):
++        messages_to_send = []
++
++        if frame_id == 0x18FF50E5:
++            engine_speed = signals_data.get('EngineSpeed', 0)
++            vehicle_speed = signals_data.get('VehicleSpeed', 0)
++            print(f"Processing EngineSpeed={engine_speed}, VehicleSpeed={vehicle_speed}")
++
++            if engine_speed > 1000:
++                fuel_level_raw = int((50 / 0.4))
++                data = bytearray(8)
++                data[0] = fuel_level_raw & 0xFF
++
++                msg = can.Message(
++                    arbitration_id=0x18FF51E5,
++                    data=data,
++                    is_extended_id=True
++                )
++                messages_to_send.append(msg)
++
++        return messages_to_send
++
++    def send_message(self, msg):
++        try:
++            self.bus.send(msg)
++            print(f"Sent frame ID {hex(msg.arbitration_id)} data {msg.data.hex()}")
++        except can.CanError as e:
++            print(f"Failed to send message: {e}")
++
++    # Example placeholder functions for bistable buttons
++    def test_button_action(self, index):
++        # Toggle flag for button index 0-9 (TEST1-TEST10)
++        self.error_flags[index] = not self.error_flags[index]
++        state = self.error_flags[index]
++        print(f"TEST{index+1} {'activated' if state else 'deactivated'} - user can replace this function")
++
++    # Set input value for monostable buttons
++    def set_input_value(self, index, value):
++        self.input_values[index] = value
++        print(f"Input value for TEST{index+11} set to {value} - user can replace this function")
++
++class GUI:
++    def __init__(self, simulator):
++        self.simulator = simulator
++        self.root = tk.Tk()
++        self.root.title("CAN Simulator GUI")
++        self.root.geometry("900x300")  # Wider, less tall
++        self.root.minsize(900, 300)
++        self.root.columnconfigure(0, weight=1)
++        self.root.rowconfigure(0, weight=1)
++
++        # Container frame with padding and grid layout
++        self.container = tk.Frame(self.root, padx=15, pady=15)
++        self.container.grid(sticky="nsew")
++        self.container.columnconfigure(0, weight=1)
++        self.container.columnconfigure(1, weight=1)
++
++        # Section frames with labels
++        self.error_frame = tk.LabelFrame(self.container, text="Bistable Error Buttons (TEST1 to TEST10)", padx=10, pady=10)
++        self.error_frame.grid(row=0, column=0, sticky="nsew", padx=10, pady=5)
++        self.error_frame.columnconfigure(tuple(range(5)), weight=1)
++
++        self.input_frame = tk.LabelFrame(self.container, text="Monostable Input Buttons with Entries (TEST11 to TEST18)", padx=10, pady=10)
++        self.input_frame.grid(row=0, column=1, sticky="nsew", padx=10, pady=5)
++        self.input_frame.columnconfigure(tuple(range(8)), weight=1)
++
++        self.create_bistable_buttons()
++        self.create_monostable_inputs()
++
++    def create_bistable_buttons(self):
++        self.bistable_buttons = []
++        for i in range(10):
++            btn = tk.Button(
++                self.error_frame, text=f"TEST{i+1}",
++                width=12, relief=tk.RAISED,
++                command=lambda i=i: self.toggle_bistable_button(i)
++            )
++            btn.grid(row=i//5, column=i%5, padx=6, pady=8, sticky="ew")
++            self.bistable_buttons.append(btn)
++
++    def toggle_bistable_button(self, index):
++        self.simulator.test_button_action(index)
++        # Update visual state
++        is_active = self.simulator.error_flags[index]
++        btn = self.bistable_buttons[index]
++        if is_active:
++            btn.config(relief=tk.SUNKEN, bg="red", fg="white")
++        else:
++            btn.config(relief=tk.RAISED, bg="SystemButtonFace", fg="black")
++
++    def create_monostable_inputs(self):
++        self.input_entries = []
++        self.input_buttons = []
++        for i in range(8):
++            # Entry box
++            entry = tk.Entry(self.input_frame, width=10, justify='center')
++            entry.grid(row=0, column=i, padx=6, pady=(6,2), sticky="ew")
++            self.input_entries.append(entry)
++            # Button
++            btn = tk.Button(
++                self.input_frame, text=f"Set TEST{i+11}",
++                width=12,
++                command=lambda i=i: self.monostable_set_value(i)
++            )
++            btn.grid(row=1, column=i, padx=6, pady=(2,6), sticky="ew")
++            self.input_buttons.append(btn)
++
++    def monostable_set_value(self, index):
++        val_str = self.input_entries[index].get()
++        try:
++            val = int(val_str)
++            self.simulator.set_input_value(index, val)
++            # Optional: show success feedback briefly or change button bg temporarily
++            self.flash_button(self.input_buttons[index])
++        except ValueError:
++            messagebox.showerror("Invalid Input", f"Please enter a valid integer for TEST{index+11}.")
++
++    def flash_button(self, button, color='lightgreen', duration=300):
++        orig_color = button.cget("background")
++        button.config(bg=color)
++        button.after(duration, lambda: button.config(bg=orig_color))
++
++    def run(self):
++        self.root.mainloop()
++
++if __name__ == '__main__':
++    simulator = DeviceSimulator(channel='PCAN_USBBUS1', bitrate=500000)
++    gui = GUI(simulator)
++    try:
++        simulator.start()
++        print("Press Ctrl+C to stop the simulator")
++        gui.run()
++    except KeyboardInterrupt:
++        print("Stopping simulator...")
++        simulator.stop()
+\ No newline at end of file
+Index: CAN_Device_Imitation/Template.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import can\r\nimport threading\r\nimport time\r\nfrom collections import namedtuple\r\nimport tkinter as tk\r\nfrom tkinter import messagebox\r\n\r\n# Example Signal definition within a CAN frame\r\nSignal = namedtuple('Signal', ['name', 'start_bit', 'length', 'is_signed', 'factor', 'offset'])\r\n\r\n# Example Frame definition\r\nclass FrameDefinition:\r\n    def __init__(self, frame_id, signals):\r\n        self.frame_id = frame_id  # Extended ID\r\n        self.signals = signals    # List of Signal objects\r\n\r\n# Hardcoded example of frames and signals (normally from .dbc)\r\nDEVICE_DEFINITIONS = {\r\n    0x18FF50E5: FrameDefinition(\r\n        frame_id=0x18FF50E5,\r\n        signals=[\r\n            Signal('EngineSpeed', start_bit=0, length=16, is_signed=False, factor=0.125, offset=0),\r\n            Signal('VehicleSpeed', start_bit=16, length=8, is_signed=False, factor=1, offset=0),\r\n        ]\r\n    ),\r\n    0x18FF51E5: FrameDefinition(\r\n        frame_id=0x18FF51E5,\r\n        signals=[\r\n            Signal('FuelLevel', start_bit=0, length=8, is_signed=False, factor=0.4, offset=0),\r\n        ]\r\n    ),\r\n}\r\n\r\ndef extract_signal(data_bytes, signal):\r\n    raw = 0\r\n    for i in range(len(data_bytes)):\r\n        raw |= data_bytes[i] << (8 * i)\r\n\r\n    mask = (1 << signal.length) - 1\r\n    raw_value = (raw >> signal.start_bit) & mask\r\n\r\n    if signal.is_signed:\r\n        sign_bit = 1 << (signal.length - 1)\r\n        if raw_value & sign_bit:\r\n            raw_value -= (1 << signal.length)\r\n\r\n    value = raw_value * signal.factor + signal.offset\r\n    return value\r\n\r\nclass DeviceSimulator:\r\n    def __init__(self, channel='PCAN_USBBUS1', bitrate=500000):\r\n        self.bus = can.interface.Bus(\r\n            bustype='pcan',\r\n            channel=channel,\r\n            bitrate=bitrate\r\n        )\r\n        self.running = False\r\n        self.error_flags = [False] * 10  # List to hold error flags for TEST1 to TEST10\r\n        self.input_values = [0] * 10  # List to hold input values\r\n\r\n    def start(self):\r\n        self.running = True\r\n        self.listener_thread = threading.Thread(target=self.receive_loop, daemon=True)\r\n        self.listener_thread.start()\r\n        print(\"CAN Device Simulator started...\")\r\n\r\n    def stop(self):\r\n        self.running = False\r\n        self.listener_thread.join()\r\n        self.bus.shutdown()\r\n        print(\"CAN Device Simulator stopped.\")\r\n\r\n    def receive_loop(self):\r\n        while self.running:\r\n            msg = self.bus.recv(timeout=1)\r\n            if msg is None:\r\n                continue\r\n            if msg.is_extended_id:\r\n                self.handle_message(msg)\r\n\r\n    def handle_message(self, msg):\r\n        frame_def = DEVICE_DEFINITIONS.get(msg.arbitration_id, None)\r\n        if frame_def is None:\r\n            print(f\"Received unknown frame ID {hex(msg.arbitration_id)} - ignoring\")\r\n            return\r\n\r\n        signals_data = {}\r\n        for signal in frame_def.signals:\r\n            try:\r\n                value = extract_signal(msg.data, signal)\r\n                signals_data[signal.name] = value\r\n            except Exception as e:\r\n                print(f\"Error extracting signal {signal.name}: {e}\")\r\n                continue\r\n\r\n        print(f\"Received frame ID {hex(msg.arbitration_id)} with signals: {signals_data}\")\r\n\r\n        output_frames = self.process_message(msg.arbitration_id, signals_data)\r\n\r\n        for out_msg in output_frames:\r\n            self.send_message(out_msg)\r\n\r\n    def process_message(self, frame_id, signals_data):\r\n        messages_to_send = []\r\n\r\n        if frame_id == 0x18FF50E5:\r\n            engine_speed = signals_data.get('EngineSpeed', 0)\r\n            vehicle_speed = signals_data.get('VehicleSpeed', 0)\r\n            print(f\"Processing EngineSpeed={engine_speed}, VehicleSpeed={vehicle_speed}\")\r\n\r\n            if engine_speed > 1000:\r\n                fuel_level_raw = int((50 / 0.4))\r\n                data = bytearray(8)\r\n                data[0] = fuel_level_raw & 0xFF\r\n\r\n                msg = can.Message(\r\n                    arbitration_id=0x18FF51E5,\r\n                    data=data,\r\n                    is_extended_id=True\r\n                )\r\n                messages_to_send.append(msg)\r\n\r\n        return messages_to_send\r\n\r\n    def send_message(self, msg):\r\n        try:\r\n            self.bus.send(msg)\r\n            print(f\"Sent frame ID {hex(msg.arbitration_id)} data {msg.data.hex()}\")\r\n        except can.CanError as e:\r\n            print(f\"Failed to send message: {e}\")\r\n\r\n    def trigger_error(self, error_index):\r\n        self.error_flags[error_index] = True\r\n        print(f\"Error TEST{error_index + 1} triggered.\")\r\n\r\n    def set_input_value(self, index, value):\r\n        self.input_values[index] = value\r\n        print(f\"Input value for field {index + 1} set to {value}.\")\r\n\r\nclass GUI:\r\n    def __init__(self, simulator):\r\n        self.simulator = simulator\r\n        self.root = tk.Tk()\r\n        self.root.title(\"CAN Simulator GUI\")\r\n\r\n        self.create_error_buttons()\r\n        self.create_input_fields()\r\n\r\n    def create_error_buttons(self):\r\n        for i in range(10):\r\n            button = tk.Button(self.root, text=f\"TEST{i + 1}\", command=lambda i=i: self.simulator.trigger_error(i))\r\n            button.pack(pady=5)\r\n\r\n    def create_input_fields(self):\r\n        self.input_entries = []\r\n        for i in range(10):\r\n            entry = tk.Entry(self.root)\r\n            entry.pack(pady=5)\r\n            self.input_entries.append(entry)\r\n\r\n            button = tk.Button(self.root, text=f\"Set Value {i + 1}\", command=lambda i=i: self.set_value(i))\r\n            button.pack(pady=5)\r\n\r\n    def set_value(self, index):\r\n        try:\r\n            value = int(self.input_entries[index].get())\r\n            self.simulator.set_input_value(index, value)\r\n        except ValueError:\r\n            messagebox.showerror(\"Invalid Input\", \"Please enter a valid integer.\")\r\n\r\n    def run(self):\r\n        self.root.mainloop()\r\n\r\nif __name__ == '__main__':\r\n    simulator = DeviceSimulator(channel='PCAN_USBBUS1', bitrate=500000)\r\n    gui = GUI(simulator)\r\n    try:\r\n        simulator.start()\r\n        print(\"Press Ctrl+C to stop the simulator\")\r\n        gui.run()\r\n    except KeyboardInterrupt:\r\n        print(\"Stopping simulator...\")\r\n        simulator.stop()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CAN_Device_Imitation/Template.py b/CAN_Device_Imitation/Template.py
+--- a/CAN_Device_Imitation/Template.py	(revision bdbbe5a671ab2ae7438e57d0e26dc9e3eb47d25f)
++++ b/CAN_Device_Imitation/Template.py	(date 1746704348759)
+@@ -55,8 +55,9 @@
+             bitrate=bitrate
+         )
+         self.running = False
+-        self.error_flags = [False] * 10  # List to hold error flags for TEST1 to TEST10
+-        self.input_values = [0] * 10  # List to hold input values
++
++        self.error_flags = [False] * 10  # For TEST1 to TEST10 bistable buttons
++        self.input_values = [0] * 8      # For TEST11 to TEST18 monostable input buttons
+ 
+     def start(self):
+         self.running = True
+@@ -129,44 +130,98 @@
+         except can.CanError as e:
+             print(f"Failed to send message: {e}")
+ 
+-    def trigger_error(self, error_index):
+-        self.error_flags[error_index] = True
+-        print(f"Error TEST{error_index + 1} triggered.")
++    # Example placeholder functions for bistable buttons
++    def test_button_action(self, index):
++        # Toggle flag for button index 0-9 (TEST1-TEST10)
++        self.error_flags[index] = not self.error_flags[index]
++        state = self.error_flags[index]
++        print(f"TEST{index+1} {'activated' if state else 'deactivated'} - user can replace this function")
+ 
++    # Set input value for monostable buttons
+     def set_input_value(self, index, value):
+         self.input_values[index] = value
+-        print(f"Input value for field {index + 1} set to {value}.")
++        print(f"Input value for TEST{index+11} set to {value} - user can replace this function")
+ 
+ class GUI:
+     def __init__(self, simulator):
+         self.simulator = simulator
+         self.root = tk.Tk()
+         self.root.title("CAN Simulator GUI")
++        self.root.geometry("900x300")  # Wider, less tall
++        self.root.minsize(900, 300)
++        self.root.columnconfigure(0, weight=1)
++        self.root.rowconfigure(0, weight=1)
++
++        # Container frame with padding and grid layout
++        self.container = tk.Frame(self.root, padx=15, pady=15)
++        self.container.grid(sticky="nsew")
++        self.container.columnconfigure(0, weight=1)
++        self.container.columnconfigure(1, weight=1)
+ 
+-        self.create_error_buttons()
+-        self.create_input_fields()
++        # Section frames with labels
++        self.error_frame = tk.LabelFrame(self.container, text="Bistable Error Buttons (TEST1 to TEST10)", padx=10, pady=10)
++        self.error_frame.grid(row=0, column=0, sticky="nsew", padx=10, pady=5)
++        self.error_frame.columnconfigure(tuple(range(5)), weight=1)
+ 
+-    def create_error_buttons(self):
++        self.input_frame = tk.LabelFrame(self.container, text="Monostable Input Buttons with Entries (TEST11 to TEST18)", padx=10, pady=10)
++        self.input_frame.grid(row=0, column=1, sticky="nsew", padx=10, pady=5)
++        self.input_frame.columnconfigure(tuple(range(8)), weight=1)
++
++        self.create_bistable_buttons()
++        self.create_monostable_inputs()
++
++    def create_bistable_buttons(self):
++        self.bistable_buttons = []
+         for i in range(10):
+-            button = tk.Button(self.root, text=f"TEST{i + 1}", command=lambda i=i: self.simulator.trigger_error(i))
+-            button.pack(pady=5)
++            btn = tk.Button(
++                self.error_frame, text=f"TEST{i+1}",
++                width=12, relief=tk.RAISED,
++                command=lambda i=i: self.toggle_bistable_button(i)
++            )
++            btn.grid(row=i//5, column=i%5, padx=6, pady=8, sticky="ew")
++            self.bistable_buttons.append(btn)
+ 
+-    def create_input_fields(self):
++    def toggle_bistable_button(self, index):
++        self.simulator.test_button_action(index)
++        # Update visual state
++        is_active = self.simulator.error_flags[index]
++        btn = self.bistable_buttons[index]
++        if is_active:
++            btn.config(relief=tk.SUNKEN, bg="red", fg="white")
++        else:
++            btn.config(relief=tk.RAISED, bg="SystemButtonFace", fg="black")
++
++    def create_monostable_inputs(self):
+         self.input_entries = []
+-        for i in range(10):
+-            entry = tk.Entry(self.root)
+-            entry.pack(pady=5)
++        self.input_buttons = []
++        for i in range(8):
++            # Entry box
++            entry = tk.Entry(self.input_frame, width=10, justify='center')
++            entry.grid(row=0, column=i, padx=6, pady=(6,2), sticky="ew")
+             self.input_entries.append(entry)
++            # Button
++            btn = tk.Button(
++                self.input_frame, text=f"Set TEST{i+11}",
++                width=12,
++                command=lambda i=i: self.monostable_set_value(i)
++            )
++            btn.grid(row=1, column=i, padx=6, pady=(2,6), sticky="ew")
++            self.input_buttons.append(btn)
+ 
+-            button = tk.Button(self.root, text=f"Set Value {i + 1}", command=lambda i=i: self.set_value(i))
+-            button.pack(pady=5)
+-
+-    def set_value(self, index):
++    def monostable_set_value(self, index):
++        val_str = self.input_entries[index].get()
+         try:
+-            value = int(self.input_entries[index].get())
+-            self.simulator.set_input_value(index, value)
++            val = int(val_str)
++            self.simulator.set_input_value(index, val)
++            # Optional: show success feedback briefly or change button bg temporarily
++            self.flash_button(self.input_buttons[index])
+         except ValueError:
+-            messagebox.showerror("Invalid Input", "Please enter a valid integer.")
++            messagebox.showerror("Invalid Input", f"Please enter a valid integer for TEST{index+11}.")
++
++    def flash_button(self, button, color='lightgreen', duration=300):
++        orig_color = button.cget("background")
++        button.config(bg=color)
++        button.after(duration, lambda: button.config(bg=orig_color))
+ 
+     def run(self):
+         self.root.mainloop()
+@@ -180,4 +235,4 @@
+         gui.run()
+     except KeyboardInterrupt:
+         print("Stopping simulator...")
+-        simulator.stop()
++        simulator.stop()
+\ No newline at end of file
