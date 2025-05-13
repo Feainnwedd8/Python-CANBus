@@ -4,6 +4,7 @@ import time
 from collections import namedtuple
 import tkinter as tk
 from tkinter import messagebox
+import CAN_Bus
 
 # Example Signal definition within a CAN frame
 Signal = namedtuple('Signal', ['name', 'start_bit', 'length', 'is_signed', 'factor', 'offset'])
