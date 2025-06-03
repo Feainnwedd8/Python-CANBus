@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e4b15c7-03b1-4ba3-b72d-ff2f21b33c67" name="Changes" comment="huge rework, works using only one vector interface - great success" />
+    <list default="true" id="4e4b15c7-03b1-4ba3-b72d-ff2f21b33c67" name="Changes" comment="Imitation updates">
+      <change afterPath="$PROJECT_DIR$/CAN Test Suite/can_receiver.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN Test Suite/can_sender.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN Test Suite/example_scenario.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN Test Suite/gui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN Test Suite/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN Test Suite/scenario_loader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN Test Suite/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/anomaly_engine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/autoencoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/can_input.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/gui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/heuristic_rules.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN_Tools/Can Fuzzer/uds_fuzzer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN_Tools/Can Fuzzer/uds_gui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAN_Tools/Log Replay/LogReplay.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Prototype Pentester/gui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Prototype Pentester/killer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Prototype Pentester/logger.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Prototype Pentester/sender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Python-CANBus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python-CANBus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAN_BusReplay/BusReplay.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/Sender_New.py" beforeDir="false" afterPath="$PROJECT_DIR$/PenTester/Sender_New.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTesterOutdated/Sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/PenTesterOutdated/Sender.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +63,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Feainnwedd8/Python-CANBus.git&quot;,
-    &quot;accountId&quot;: &quot;90abc1a8-4387-4431-85d1-6bce4b83dca7&quot;
+    &quot;accountId&quot;: &quot;77452db6-1cbb-4b6a-ae3f-3b77f56c735e&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -43,76 +73,68 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2vianp8S78S5rN8jJ372WCb5iJq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.BusReplay.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Clicker.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Reader_Logger.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Reader_Logger_v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Sender.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Sender_New.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Sender_TimeMes.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test_Reader.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test_Reader_v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sobkowiak_k/Desktop/Zadania/Stanowisko Testowe/Python_CANBus/Python-CANBus&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.BusReplay.executor": "Run",
+    "Python.CAN_Fuzzer.executor": "Run",
+    "Python.Clicker.executor": "Run",
+    "Python.Debugger.executor": "Run",
+    "Python.LogReplay.executor": "Run",
+    "Python.Parser.executor": "Run",
+    "Python.PowerSteering.executor": "Run",
+    "Python.Reader_Logger.executor": "Run",
+    "Python.Reader_Logger_v2.executor": "Run",
+    "Python.Sender.executor": "Run",
+    "Python.Sender_New.executor": "Run",
+    "Python.Sender_TimeMes.executor": "Run",
+    "Python.Template.executor": "Run",
+    "Python.Test1.executor": "Run",
+    "Python.Test_Reader.executor": "Run",
+    "Python.Test_Reader_v2.executor": "Run",
+    "Python.Tester.executor": "Run",
+    "Python.gui.executor": "Run",
+    "Python.gui_qt.executor": "Run",
+    "Python.logger.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.sender.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.uds_gui.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/sobkowiak_k/Desktop/Zadania/Stanowisko Testowe/Python_CANBus/Python-CANBus/Prototype Pentester",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus\Prototype Pentester" />
+      <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus\CAN_Device_Imitation" />
       <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus\CAN_Tools\Can Fuzzer" />
+      <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus\CAN_Tools\Log Replay" />
       <recent name="D:\Users\sobkowiak_k\PycharmProjects\Python-CANBus\PenTesterOutdated" />
       <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus" />
       <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus\PenTester" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Clicker" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="Python-CANBus" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Clicker" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Clicker/Clicker.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PY-251.23774.444" />
-        <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
+        <option value="bundled-python-sdk-ce3d9afa04ac-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.20224.347" />
       </set>
     </attachedChunks>
   </component>
@@ -219,7 +241,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747129662349</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="new can bus dbc parser for working at device imitating">
+      <option name="closed" value="true" />
+      <created>1747141396929</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747141396929</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Imitation updates">
+      <option name="closed" value="true" />
+      <created>1748242691636</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1748242691636</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +281,9 @@
     <MESSAGE value="Reworked sending and receaving in PenTester&#10;Channel on both is switching automatically after test on one channel&#10;Renamed files subcommit&#10;Comments upgrade&#10;&#10;Reviewed-by: Feainnwedd8" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="huge rework, works using only one vector interface - great success" />
-    <option name="LAST_COMMIT_MESSAGE" value="huge rework, works using only one vector interface - great success" />
+    <MESSAGE value="new can bus dbc parser for working at device imitating" />
+    <MESSAGE value="Imitation updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Imitation updates" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Python_CANBus$Reader_Logger_v2.coverage" NAME="Reader_Logger_v2 Coverage Results" MODIFIED="1747129394078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PenTester" />
