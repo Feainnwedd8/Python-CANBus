@@ -4,36 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e4b15c7-03b1-4ba3-b72d-ff2f21b33c67" name="Changes" comment="Imitation updates">
-      <change afterPath="$PROJECT_DIR$/CAN Test Suite/can_receiver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN Test Suite/can_sender.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN Test Suite/example_scenario.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN Test Suite/gui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN Test Suite/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN Test Suite/scenario_loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN Test Suite/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/anomaly_engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/autoencoder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/can_input.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/gui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/heuristic_rules.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN_Anomaly_Detection/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN_Tools/Can Fuzzer/uds_fuzzer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN_Tools/Can Fuzzer/uds_gui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAN_Tools/Log Replay/LogReplay.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prototype Pentester/gui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prototype Pentester/killer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prototype Pentester/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prototype Pentester/sender.py" afterDir="false" />
+    <list default="true" id="4e4b15c7-03b1-4ba3-b72d-ff2f21b33c67" name="Changes" comment="PenTester req">
+      <change afterPath="$PROJECT_DIR$/PenTester/Reader_naprawa.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Python-CANBus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python-CANBus.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-05-13_12_41__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAN_BusReplay/BusReplay.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/activate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/activate.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/activate.fish" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/activate.nu" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/activate.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/activate_this.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/deactivate.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/pip-3.9.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/pip.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/pip3.9.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/pip3.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/pydoc.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/python.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/pythonw.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/wheel-3.9.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/wheel.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/wheel3.9.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/Scripts/wheel3.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/.venv/pyvenv.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/Reader_Logger_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/PenTester/Reader_Logger_v2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PenTester/Sender_New.py" beforeDir="false" afterPath="$PROJECT_DIR$/PenTester/Sender_New.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenTesterOutdated/Sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/PenTesterOutdated/Sender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTester/req.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PenTester/req.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenTesterOutdated/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/PenTesterOutdated/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype Pentester/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prototype Pentester/gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype Pentester/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prototype Pentester/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype Pentester/sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prototype Pentester/sender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prototype Pentester/test_config.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +68,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Feainnwedd8/Python-CANBus.git&quot;,
-    &quot;accountId&quot;: &quot;77452db6-1cbb-4b6a-ae3f-3b77f56c735e&quot;
+    &quot;accountId&quot;: &quot;90abc1a8-4387-4431-85d1-6bce4b83dca7&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -73,7 +78,6 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2vianp8S78S5rN8jJ372WCb5iJq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -81,33 +85,26 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.BusReplay.executor": "Run",
-    "Python.CAN_Fuzzer.executor": "Run",
     "Python.Clicker.executor": "Run",
-    "Python.Debugger.executor": "Run",
-    "Python.LogReplay.executor": "Run",
-    "Python.Parser.executor": "Run",
-    "Python.PowerSteering.executor": "Run",
     "Python.Reader_Logger.executor": "Run",
     "Python.Reader_Logger_v2.executor": "Run",
+    "Python.Reader_naprawa.executor": "Run",
     "Python.Sender.executor": "Run",
     "Python.Sender_New.executor": "Run",
     "Python.Sender_TimeMes.executor": "Run",
-    "Python.Template.executor": "Run",
     "Python.Test1.executor": "Run",
     "Python.Test_Reader.executor": "Run",
+    "Python.Test_Reader_notSupporrted.executor": "Run",
     "Python.Test_Reader_v2.executor": "Run",
-    "Python.Tester.executor": "Run",
+    "Python.beep.executor": "Run",
     "Python.gui.executor": "Run",
-    "Python.gui_qt.executor": "Run",
     "Python.logger.executor": "Run",
-    "Python.main.executor": "Run",
     "Python.sender.executor": "Run",
     "Python.test.executor": "Run",
-    "Python.uds_gui.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/sobkowiak_k/Desktop/Zadania/Stanowisko Testowe/Python_CANBus/Python-CANBus/Prototype Pentester",
+    "last_opened_file_path": "D:/Users/sobkowiak_k/PycharmProjects/Python-CANBus/PenTester",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -119,13 +116,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus\Prototype Pentester" />
-      <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus\CAN_Device_Imitation" />
+      <recent name="D:\Users\sobkowiak_k\PycharmProjects\Python-CANBus\PenTester" />
+      <recent name="D:\Users\sobkowiak_k\PycharmProjects\Python-CANBus\Prototype Pentester" />
       <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus\CAN_Tools\Can Fuzzer" />
-      <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus\CAN_Tools\Log Replay" />
+      <recent name="D:\Users\sobkowiak_k\PycharmProjects\Python-CANBus\shared_config.json" />
       <recent name="D:\Users\sobkowiak_k\PycharmProjects\Python-CANBus\PenTesterOutdated" />
       <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus" />
       <recent name="C:\Users\sobkowiak_k\Desktop\Zadania\Stanowisko Testowe\Python_CANBus\Python-CANBus\PenTester" />
@@ -134,7 +130,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-ce3d9afa04ac-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.20224.347" />
+        <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
       </set>
     </attachedChunks>
   </component>
@@ -152,6 +148,9 @@
       <workItem from="1746780157047" duration="2824000" />
       <workItem from="1746783481215" duration="42037000" />
       <workItem from="1747127895435" duration="2275000" />
+      <workItem from="1748927906701" duration="1614000" />
+      <workItem from="1748930514338" duration="2148000" />
+      <workItem from="1751619312763" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="v1">
       <option name="closed" value="true" />
@@ -241,23 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747129662349</updated>
     </task>
-    <task id="LOCAL-00012" summary="new can bus dbc parser for working at device imitating">
+    <task id="LOCAL-00012" summary="PenTester req">
       <option name="closed" value="true" />
-      <created>1747141396929</created>
+      <created>1748926026374</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1747141396929</updated>
+      <updated>1748926026374</updated>
     </task>
-    <task id="LOCAL-00013" summary="Imitation updates">
-      <option name="closed" value="true" />
-      <created>1748242691636</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1748242691636</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,15 +272,17 @@
     <MESSAGE value="Reworked sending and receaving in PenTester&#10;Channel on both is switching automatically after test on one channel&#10;Renamed files subcommit&#10;Comments upgrade&#10;&#10;Reviewed-by: Feainnwedd8" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="huge rework, works using only one vector interface - great success" />
-    <MESSAGE value="new can bus dbc parser for working at device imitating" />
-    <MESSAGE value="Imitation updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Imitation updates" />
+    <MESSAGE value="PenTester req" />
+    <option name="LAST_COMMIT_MESSAGE" value="PenTester req" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Python_CANBus$Reader_Logger_v2.coverage" NAME="Reader_Logger_v2 Coverage Results" MODIFIED="1747129394078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PenTester" />
-    <SUITE FILE_PATH="coverage/Python_CANBus$Clicker.coverage" NAME="Clicker Coverage Results" MODIFIED="1747129487465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Clicker" />
-    <SUITE FILE_PATH="coverage/Python_CANBus$test.coverage" NAME="test Coverage Results" MODIFIED="1747127528994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PenTesterOutdated" />
-    <SUITE FILE_PATH="coverage/Python_CANBus$Sender_New.coverage" NAME="Sender_New Coverage Results" MODIFIED="1747129397199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PenTester" />
+    <SUITE FILE_PATH="coverage/Python_CANBus$logger.coverage" NAME="logger Coverage Results" MODIFIED="1748932605223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prototype Pentester" />
+    <SUITE FILE_PATH="coverage/Python_CANBus$Reader_Logger_v2.coverage" NAME="Reader_Logger_v2 Coverage Results" MODIFIED="1748587965826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PenTester" />
+    <SUITE FILE_PATH="coverage/Python_CANBus$Clicker.coverage" NAME="Clicker Coverage Results" MODIFIED="1748410826714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Clicker" />
+    <SUITE FILE_PATH="coverage/Python_CANBus$test.coverage" NAME="test Coverage Results" MODIFIED="1747205501066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PenTesterOutdated" />
+    <SUITE FILE_PATH="coverage/Python_CANBus$sender.coverage" NAME="sender Coverage Results" MODIFIED="1748932839799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prototype Pentester" />
+    <SUITE FILE_PATH="coverage/Python_CANBus$gui.coverage" NAME="gui Coverage Results" MODIFIED="1748932845467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prototype Pentester" />
+    <SUITE FILE_PATH="coverage/Python_CANBus$Sender_New.coverage" NAME="Sender_New Coverage Results" MODIFIED="1748587976595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PenTester" />
     <SUITE FILE_PATH="coverage/Python_CANBus$Reader_Logger.coverage" NAME="Reader_Logger Coverage Results" MODIFIED="1747034092019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PenTester" />
     <SUITE FILE_PATH="coverage/Python_CANBus$Sender.coverage" NAME="Sender Coverage Results" MODIFIED="1746791530465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PenTester" />
   </component>
